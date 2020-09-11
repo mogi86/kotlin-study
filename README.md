@@ -4,7 +4,7 @@
 
 * This repository is for study kotlin.
 * There are easy code to understand base.
-* It's expected that use "intelliJ".
+* It's expected that use `intelliJ`.
 
 ## Structure
 
@@ -14,7 +14,7 @@
 ## Run
 
 * Compile
-    * e.g) When you want to compile "variable" package
+    * e.g) When you want to compile `variable` package.
 
 ```bash 
 $ cd /path/to/study-kotlin
@@ -22,7 +22,7 @@ $ kotlinc src/variable -include-runtime -d variable.jar
 ```
 
 * Run
-    * e.g) When you want to run "variable" package
+    * e.g) When you want to run `variable` package.
 
 ```bash
 $ cd /path/to/study-kotlin
