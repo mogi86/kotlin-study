@@ -8,6 +8,9 @@ fun main() {
 
     // null
     useNull()
+
+    // val
+    useVal()
 }
 
 fun useNull() {
@@ -23,4 +26,9 @@ fun useNull() {
     var num: Int?
     num = null
     println(num?.compareTo(123))
+}
+
+fun useVal() {
+    val num = 222
+    println(num)
 }
