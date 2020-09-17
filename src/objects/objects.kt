@@ -9,6 +9,17 @@ fun main() {
 
     val person3 = Person3("John", 22)
     person3.show()
+
+    //--
+    // It seems that the constructor to be called can be changed
+    // depending on the difference in the arguments.
+    //__
+    // call "Secondary Constructor 2"
+    val calc1 = Calc()
+    println(calc1.getResult())
+    // call "Primary Constructor"
+    val calc2 = Calc(200, 300)
+    println(calc2.getResult())
 }
 
 // see: https://kotlinlang.org/docs/reference/classes.html#constructors
@@ -43,5 +54,26 @@ class Person2(val name: String, val age: Int) {
 class Person3 public constructor(val name: String, val age: Int) {
     fun show() {
         println("your name is ${this.name}. And your age is ${this.age}.")
+    }
+}
+
+// Secondary constructors
+class Calc(val x: Int, val y: Int) {
+    init {
+        println("Primary Constructor. x=${this.x}, y=${this.y}")
+    }
+
+    // Secondary constructor 1
+    constructor(x: Int) :this(x, 100) {
+        println("Secondary Constructor 1")
+    }
+
+    // Secondary constructor 2
+    constructor() :this(20) {
+        println("Secondary Constructor 2")
+    }
+
+    fun getResult(): Int {
+        return this.x * this.y
     }
 }
