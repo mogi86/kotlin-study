@@ -20,6 +20,12 @@ fun main() {
     // call "Primary Constructor"
     val calc2 = Calc(200, 300)
     println(calc2.getResult())
+
+    val dog = Dog("Hachi")
+    val result = dog.showName()
+    println(result)
+
+    val benz = Benz()
 }
 
 // see: https://kotlinlang.org/docs/reference/classes.html#constructors
@@ -75,5 +81,38 @@ class Calc(val x: Int, val y: Int) {
 
     fun getResult(): Int {
         return this.x * this.y
+    }
+}
+
+// Inheritance
+// see: https://kotlinlang.org/docs/reference/classes.html#inheritance
+//   By default, Kotlin classes are final: they can’t be inherited.
+//   To make a class inheritable, mark it with the "open" keyword.
+open class Animal(var name: String) {
+    open fun showName(): String {
+        return this.name
+    }
+}
+
+class Dog(name: String) : Animal(name) {
+    override fun showName(): String {
+        return "name is ${this.name}"
+    }
+}
+
+// initialization order
+// see: https://kotlinlang.org/docs/reference/classes.html#derived-class-initialization-order
+//   initialization is ran as below order.
+//     1. Super class
+//     2. Derived class
+open class Car {
+    init {
+        println("I'm super class.")
+    }
+}
+
+class Benz : Car() {
+    init {
+        println("I'm derived class.")
     }
 }
